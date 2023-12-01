@@ -1,46 +1,35 @@
 # Workspace_Symfony
-Firstly, the blog. Articles will be displayed on the home page, 10 per page. The rest will be accessible via a pagination. The page in question will have a keyword search system (within the title and tags) and a filter (via the categories attached to the articles). When the user clicks on an article, he/she will be directed to the page of the article in question.
-The user can also decide to like the article if they wish. They can also share the article via the main social networks (Facebook, Twitter) by clicking on the buttons provided for this purpose.
-An article can also be scheduled in advance for a specific date and time.
-An article will be defined by: a unique identifier*, a title*, an image, a content*, its status (published, draft), a marker allowing to know if this article has atready been reported to users (Mailchimp mailing, instagram & Facebook publication), a list of tags, a list of categories (with a primary category if there are several categories), the list of comments of the article, an author (user), an update date and a creation date*
-Articles can be viewed and shared by any type of user. However, only logged-in users will be able to like the articles.
-wcategorles
-To talk about categories, we want each category to display the articles related to it. The view in question will follow the same model as the blog page. A category will be defined by: a unique identifier*, a name*, a description, the list of articles and a creation date*.
-The tags
-At the level of labels, the system will be similar to that of categories. However, there will be no "primary label" system.
-§ Comments
-Concerning comments, they will be present under the article. A logged-in user will therefore be able to write one or more comments under an article. A user will be able to reply to another user's comment, and even like it if they wish. There will be a limit of 20 replies per comment.
-Only logged-in users will be able to post a comment, like a comment and reply to it. On the other hand, all users will be able to view comments.
-The login and registration system
-Users will be able to create a user account and subsequently log in, in order to access additional features. They will have the option of logging in with the basic system, or using the Google login. It will not be possible to have a "classic" account and a "Google" account with the same email address. The user will have to make a choice.
-During the classic registration, he will have to validate his account with an email address verification system.
-They will also be able to regenerate a password if they forget it.
-A user will be defined by a unique identifier*, an email*, a surname, a first name*, a password*, an avatar, a list of roles*, a date of account creation*.
+Firstly, let's clarify the text while retaining its objectives and language:
 
-The user account
+Blog Section:
+The blog's home page will showcase 10 articles with pagination for additional content. A keyword search (within titles and tags) and a filter (via article categories) will enhance user navigation. Clicking on an article directs the user to its dedicated page. Users can like and share articles on Facebook and Twitter. Articles can be scheduled for future publication. Each article is identified by a unique identifier, title, image, content, status (published or draft), reporting marker (Mailchimp, Instagram, Facebook), tags, categories, comments, author, update date, and creation date. All users can view and share articles, but only logged-in users can like them.
 
-The logged-in user will also be able to manage his account. He will be able to modify all the information of his account (information, password). The user will also have a history of their activity (viewing an article, liking an article, posting a comment, replying to a comment, liking a comment).
+Categories:
+Categories will display related articles, following the blog page model. Each category has a unique identifier, name, description, list of articles, and creation date.
 
-The user can choose to make his account public. Other users will then have access to their information (excluding their password) as well as their history.
+Tags:
+Similar to categories, the tag system lacks a "primary tag" concept.
 
-Notification system
+Comments:
+Comments appear below articles, allowing logged-in users to post, like, and reply (up to 20 replies per comment). All users can view comments.
 
-Notifications will be sent to users and administrators based on certain actins.
+Login and Registration:
+Users create and log in to accounts with either a basic system or Google login. One email address can't have both account types. Classic registration requires email address verification. Users can regenerate forgotten passwords. A user is defined by a unique identifier, email, surname, first name, password, avatar, list of roles, and date of account creation.
 
-For classic users, a notification will be sent when: a new article is published, a reply is made to one of the user's comments (or a like of one of these comments).
+User Account:
+Logged-in users can manage account details and view activity history, which includes article views, liked articles, posted comments, replied comments, and liked comments. Users can choose to make their accounts public, sharing information (excluding passwords) and history with other users.
 
-An administrator will receive the same notifications, but with the addition of: a notification for each like to an article, for a contact form submitted, when a new user registers
+Notification System:
+Users and administrators receive notifications for new article publications and replies or likes on their comments. Administrators also receive notifications for article likes, contact form submissions, and new user registrations.
 
-a The administration part
+Administration Part:
+The Back-Office manages all website entities and facilitates manual email campaigns via Mailchimp for article publication.
 
-The Back-Office will manage all the entities of the website.
+Contact Form:
+The contact form includes fields for name, surname, email address, subject, and message. If the user is logged in, additional details are included.
 
-We will also want to set up a manual email from the Back-Office when the article is published. For this, we will use a Mailchimp campaign (in order to collect the campaign data, but also in order to facilitate the mass sending of emails).
+About Page:
+The "About" page, in both French and English, provides information about the site designer.
 
-The contact form
-
-The site will also provide a contact form. This Form will contain several fields: name*, surname, email address*, subject*, message*. If the user is logged in, then
-"About" page
-The "About" page will contain information about the site designer. It will be in French and English.
-Other features
-The site will display in its Header the weather of the day according to the user's location. If the user declines the location request, the weather for Rennes will be displayed.
+Additional Features:
+The site's header displays daily weather based on the user's location. If location access is denied, the weather for Rennes is displayed.
