@@ -1,15 +1,35 @@
 # Workspace_Symfony
-#THE BLOG
-Firstly, the blog. Articles will be displayed on the home page, 9 per page. The rest will be accessible via a pagination. The page in question will have a keyword search system (within the title and tags) and a filter (via the categories attached to the articles) When the user clicks on an article, he/she will be directed to the page of the article in question.
+Firstly, let's clarify the text while retaining its objectives and language:
 
-The use can also decide to like the article if they wish. They can also share the article via the main social networks(Facebook, Twitter) by clicking on the buttons provided for this purpose.
+Blog Section:
+The blog's home page will showcase 10 articles with pagination for additional content. A keyword search (within titles and tags) and a filter (via article categories) will enhance user navigation. Clicking on an article directs the user to its dedicated page. Users can like and share articles on Facebook and Twitter. Articles can be scheduled for future publication. Each article is identified by a unique identifier, title, image, content, status (published or draft), reporting marker (Mailchimp, Instagram, Facebook), tags, categories, comments, author, update date, and creation date. All users can view and share articles, but only logged-in users can like them.
 
-An article can also be scheduled in advance for a specific date and time.
+Categories:
+Categories will display related articles, following the blog page model. Each category has a unique identifier, name, description, list of articles, and creation date.
 
-An article will be defined by a unique identifier*, a title*, an image, a content*, its status (published, draft), a marker allowing to know if this article has already been reported to users (Mailchimp mailing, instagram & Facebook publication), a list of tags, a list of catégories ( with a  primary catégory if there are several categories), the list of comments of the article, an author(user), an update date date and a creation date*
+Tags:
+Similar to categories, the tag system lacks a "primary tag" concept.
 
-Article can be viewed and shared by any type of user. However, only logged-in users will be able to like the articles.
+Comments:
+Comments appear below articles, allowing logged-in users to post, like, and reply (up to 20 replies per comment). All users can view comments.
 
-#CATEGORIES
+Login and Registration:
+Users create and log in to accounts with either a basic system or Google login. One email address can't have both account types. Classic registration requires email address verification. Users can regenerate forgotten passwords. A user is defined by a unique identifier, email, surname, first name, password, avatar, list of roles, and date of account creation.
 
-To talk about categories, we want each category to display the articles related to it. The view in question will follow the same
+User Account:
+Logged-in users can manage account details and view activity history, which includes article views, liked articles, posted comments, replied comments, and liked comments. Users can choose to make their accounts public, sharing information (excluding passwords) and history with other users.
+
+Notification System:
+Users and administrators receive notifications for new article publications and replies or likes on their comments. Administrators also receive notifications for article likes, contact form submissions, and new user registrations.
+
+Administration Part:
+The Back-Office manages all website entities and facilitates manual email campaigns via Mailchimp for article publication.
+
+Contact Form:
+The contact form includes fields for name, surname, email address, subject, and message. If the user is logged in, additional details are included.
+
+About Page:
+The "About" page, in both French and English, provides information about the site designer.
+
+Additional Features:
+The site's header displays daily weather based on the user's location. If location access is denied, the weather for Rennes is displayed.
