@@ -1,0 +1,18 @@
+{
+    "name": "franckessi/symfony-blog",
+    "description": "Projet Symfony pour un blog",
+    "license": "Apache",
+    "autoload": {
+        "psr-4": {
+            "Franckessi\\SymfonyBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "franckessi237",
+            "email": "essisondofranckpatrick@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

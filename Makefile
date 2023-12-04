@@ -22,6 +22,15 @@ init: ## Init the project
 cache-clear: ## Clear cache
 	$(SYMFONY_CONSOLE) cache:clear
 
+## —— ✅ Test ——
+.PHONY: tests
+tests: ## Run all tests
+	$(MAKE) database-init-test
+	$(PHP) bin/phpunit --testdox tests/Unit/
+	$(PHP) bin/phpunit --testdox tests/Functional/
+	$(PHP) bin/phpunit --testdox tests/E2E/
+
+
 ## —— 🐳 Docker ——
 docker-start: ## Start app
 	$(DOCKER_COMPOSE) up -d 
