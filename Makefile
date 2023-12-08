@@ -16,7 +16,8 @@ RED = /bin/echo -e "\x1b[31m\#\# $1\x1b[0m"
 init: ## Init the project
 	$(MAKE) docker-start
 	$(MAKE) composer-install
-	@$(call GREEN,"The application is available at: http://127.0.0.1:8000/.")
+	@$(call GREEN,"The application is available at: http://127.0.0.1:8888/.")
+	@$(call GREEN,"The application is available symfony  at: http://127.0.0.1:8001/.")
 
 
 cache-clear: ## Clear cache
