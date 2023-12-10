@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Post;
 
+use Cocur\Slugify\Slugify;
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[UniqueEntity('slug', message: 'Ce slug existe déjà.')]
 class Post
 {
     const STATES = ['STATE_DRAFT', 'STATE_PUBLISHED'];
@@ -32,6 +35,10 @@ class Post
     #[ORM\Column(type: 'string', length: 255)]
     private string $state = Post::STATES[0];
 
+    #[ORM\OneToOne(inversedBy: 'post', targetEntity: Thumbnail::class, cascade: ['persist', 'remove'])]
+    private ?Thumbnail $thumbnail = null;
+
+
 
     #[ORM\Column(type: 'datetime_immutable')]
     #[Assert\NotNull()]
@@ -42,12 +49,19 @@ class Post
     private \DateTimeImmutable $createdAt;
 
 
+    
 
     public function __construct()
     {
         $this->updatedAt = new \DateTimeImmutable();
         $this->createdAt = new \DateTimeImmutable();
         
+    }
+
+    public function prePersist()
+    {
+        $this->slug = (new Slugify())->slugify($this->title);
+
     }
 
     #[ORM\PreUpdate]
@@ -115,6 +129,19 @@ class Post
 
         return $this;
     }
+
+    public function getThumbnail(): ?Thumbnail
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?Thumbnail $thumbnail): self
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
 
 
 
