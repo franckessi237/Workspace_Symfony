@@ -3,7 +3,7 @@
 namespace App\Entity\Post;
 
 use Cocur\Slugify\Slugify;
-use App\Repository\PostRepository;
+use App\Repository\Post\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
