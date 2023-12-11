@@ -58,6 +58,7 @@ class Post
         
     }
 
+    #[ORM\PrePersist]
     public function prePersist()
     {
         $this->slug = (new Slugify())->slugify($this->title);

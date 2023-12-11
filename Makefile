@@ -23,6 +23,11 @@ init: ## Init the project
 cache-clear: ## Clear cache
 	$(SYMFONY_CONSOLE) cache:clear
 
+# Add the npm-watch target
+npm-watch: ## Run npm watch
+	$(NPM) run watch
+
+
 ## —— ✅ Test ——
 .PHONY: tests
 tests: ## Run all tests
