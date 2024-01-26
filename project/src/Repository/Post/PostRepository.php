@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Repository\Post;
 
 use App\Entity\Post\Post;
@@ -22,4 +21,18 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
+    /**
+     * GET published posts
+     *
+     * @return array
+     */
+    public function findPublished(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.state LIKE :state')
+            ->setParameter('state', '%STATE_PUBLISHED%')
+            ->orderBy('p.createdAt', 'DESC') // Fix: added the field to order by
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -12,9 +12,11 @@ class PostController extends AbstractController
     #[Route('/', name: 'post.index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findAll();
-        
-        return $this->render('pages/blog/index.html.twig', [
+        $posts = $postRepository->findPublished(); // Fix: Correct method name
+        //dd($posts);
+
+        return $this->render('pages/blog/index.html.twig', 
+        [
             'posts' => $posts
         ]);
     }
